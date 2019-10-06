@@ -9,4 +9,6 @@ var (
 	ErrCoordinateNotExists = errors.New("coordinate not exists")
 
 	ErrInvalidMove = errors.New("invalid move")
+
+	ErrInvalidCommand = errors.New("invalid command")
 )

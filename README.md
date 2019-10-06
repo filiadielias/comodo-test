@@ -13,7 +13,7 @@ go get -v github.com/filiadielias/comodo-test
 cd $GOPATH/src/github.com/filiadielias/comodo-test
 
 # Build project
-Make build
+make build
 
 # Run project
 ./comodo-test PLACE 1,1,NORTH REPORT

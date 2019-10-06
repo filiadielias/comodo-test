@@ -1,8 +1,7 @@
 # Toy Robot Simulator
 
 ### Description
-This is Comodo interview test
-For further information about what this program should do, check this link :
+Comodo interview test, for further information about what this program should do, check this link :
 https://github.com/filiadielias/comodo-test/blob/master/Toy%20Robot%20Simulator.md
 
 ### How to run

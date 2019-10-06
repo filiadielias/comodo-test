@@ -1,7 +1,6 @@
 package command
 
 import (
-	"regexp"
 	"strconv"
 	"strings"
 
@@ -17,14 +16,9 @@ func NewCommandUsecaseImpl(robotUsecase service.RobotUsecase) service.CommandUse
 	return &commandUsecaseImpl{robotUsecase}
 }
 
-func (c *commandUsecaseImpl) Run(command string, board model.Board) ([]string, error) {
+func (c *commandUsecaseImpl) Run(commands []string, board model.Board) ([]string, error) {
 	var robot *model.Robot
 	var result []string
-
-	command = strings.ToLower(command)
-	command = removeDuplicateSpaces(command)
-
-	commands := strings.Split(command, " ")
 
 	//at least must have 2 commands (ex: PLACE 1,2,NORTH)
 	if len(commands) <= 1 {
@@ -33,6 +27,7 @@ func (c *commandUsecaseImpl) Run(command string, board model.Board) ([]string, e
 
 	var prevCommand string
 	for _, cmd := range commands {
+		cmd = strings.ToLower(cmd)
 		if prevCommand == "place" && !isValidCommand(cmd) {
 
 			//get PLACE parameter
@@ -116,9 +111,4 @@ func isValidCommand(sub string) bool {
 	}
 
 	return false
-}
-
-func removeDuplicateSpaces(s string) string {
-	space := regexp.MustCompile(`\s+`)
-	return space.ReplaceAllString(s, " ")
 }

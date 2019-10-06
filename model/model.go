@@ -12,7 +12,8 @@ type Board struct {
 	Max Coordinate
 }
 
-//Toy struct
+//Robot struct
 type Robot struct {
 	Current Coordinate
+	Face    Coordinate
 }

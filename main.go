@@ -1,60 +1,34 @@
 package main
 
-//commands
-//toy
-//board
+import (
+	"fmt"
+	"os"
 
-type Command struct {
-	commands []string
-}
-
-type Board struct {
-	Min Coordinate
-	Max Coordinate
-}
-
-type Coordinate struct {
-	X int8
-	Y int8
-}
-
-type Toy struct {
-	Curr Coordinate
-	face Coordinate
-
-	Board *Board
-}
-
-//direction coordinate
-var (
-	West  = Coordinate{-1, 0}
-	East  = Coordinate{1, 0}
-	North = Coordinate{0, 1}
-	South = Coordinate{0, -1}
+	board_service "github.com/filiadielias/comodo-test/service/board"
+	command_service "github.com/filiadielias/comodo-test/service/command"
+	robot_service "github.com/filiadielias/comodo-test/service/robot"
 )
 
-func (t *Toy) Move() {
-	coor := Coordinate{
-		X: t.Curr.X + t.face.X,
-		Y: t.Curr.Y + t.face.Y,
-	}
-
-	if t.Board.IsValid(coor) {
-		t.Curr = coor
-	}
-}
-
-func (b Board) IsValid(coor Coordinate) bool {
-	if !(b.Min.X <= coor.X && coor.Y <= b.Min.Y) {
-		return false
-	}
-
-	return b.Max.X >= coor.X && b.Max.Y >= coor.Y
-}
-
 func main() {
-	board := Board{
-		Min: Coordinate{0, 0},
-		Max: Coordinate{4, 4},
+	params := os.Args[1:]
+
+	// params = "PLACES 1,2,NORTH MOVE LEFT REPORT PLACE 0,0,EAST MOVE MOVE MOVE MOVE REPORT RIGHT MOVE MOVE REPORT"
+
+	boardUsecase := board_service.NewBoardUsecaseImpl()
+	board, err := boardUsecase.CreateBoard(5, 5)
+	if err != nil {
+		panic(err)
+	}
+
+	robotUsecase := robot_service.NewRobotUsecaseImpl(boardUsecase)
+
+	commandUsecase := command_service.NewCommandUsecaseImpl(robotUsecase)
+	result, err := commandUsecase.Run(params, board)
+	if err != nil {
+		panic(err)
+	}
+
+	for _, r := range result {
+		fmt.Println(r)
 	}
 }

@@ -18,4 +18,8 @@ type (
 
 		Report(*model.Robot) string
 	}
+
+	CommandUsecase interface {
+		Run(string, model.Board) ([]string, error)
+	}
 )

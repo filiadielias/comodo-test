@@ -1,8 +1,8 @@
 package board
 
 import (
-	"github.com/filiadielias/comodo-test/model"
-	"github.com/filiadielias/comodo-test/service"
+	"github.com/filiadielias/toy-robot-simulator/model"
+	"github.com/filiadielias/toy-robot-simulator/service"
 )
 
 //contract implementation

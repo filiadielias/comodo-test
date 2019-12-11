@@ -3,8 +3,8 @@ package robot
 import (
 	"fmt"
 
-	"github.com/filiadielias/comodo-test/model"
-	"github.com/filiadielias/comodo-test/service"
+	"github.com/filiadielias/toy-robot-simulator/model"
+	"github.com/filiadielias/toy-robot-simulator/service"
 )
 
 type robotUsecaseImpl struct {

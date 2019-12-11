@@ -1,4 +1,4 @@
-module github.com/filiadielias/comodo-test
+module github.com/filiadielias/toy-robot-simulator
 
 go 1.13
 

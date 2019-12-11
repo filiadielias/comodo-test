@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/filiadielias/comodo-test/model"
+	"github.com/filiadielias/toy-robot-simulator/model"
 	"github.com/stretchr/testify/assert"
 )
 

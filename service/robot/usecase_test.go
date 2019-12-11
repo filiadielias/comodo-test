@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/filiadielias/comodo-test/model"
-	"github.com/filiadielias/comodo-test/service/board"
+	"github.com/filiadielias/toy-robot-simulator/model"
+	"github.com/filiadielias/toy-robot-simulator/service/board"
 	"github.com/stretchr/testify/assert"
 )
 

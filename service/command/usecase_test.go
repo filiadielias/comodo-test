@@ -3,9 +3,9 @@ package command
 import (
 	"testing"
 
-	"github.com/filiadielias/comodo-test/model"
-	"github.com/filiadielias/comodo-test/service/board"
-	"github.com/filiadielias/comodo-test/service/robot"
+	"github.com/filiadielias/toy-robot-simulator/model"
+	"github.com/filiadielias/toy-robot-simulator/service/board"
+	"github.com/filiadielias/toy-robot-simulator/service/robot"
 	"github.com/stretchr/testify/assert"
 )
 

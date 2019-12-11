@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/filiadielias/comodo-test/model"
+	"github.com/filiadielias/toy-robot-simulator/model"
 )
 
 //interface contract

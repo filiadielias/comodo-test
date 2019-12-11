@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	board_service "github.com/filiadielias/comodo-test/service/board"
-	command_service "github.com/filiadielias/comodo-test/service/command"
-	robot_service "github.com/filiadielias/comodo-test/service/robot"
+	board_service "github.com/filiadielias/toy-robot-simulator/service/board"
+	command_service "github.com/filiadielias/toy-robot-simulator/service/command"
+	robot_service "github.com/filiadielias/toy-robot-simulator/service/robot"
 )
 
 func main() {
